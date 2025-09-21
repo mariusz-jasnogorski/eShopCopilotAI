@@ -1,23 +1,22 @@
-﻿<!DOCTYPE html>
-
+﻿<!doctype html>
 <html lang="pl">
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>eShop Copilot AI — Portal i Cennik (Static, No React/TS/Decorators)</title>
-    <meta content="Personalizowany doradca AI dla sprzedających na Allegro: prognozowanie sprzedaży, rekomendacje cenowe, wykrywanie anomalii, symulacje 'co-jeśli'." name="description" />
+    <meta name="description" content="Personalizowany doradca AI dla sprzedających na Allegro: prognozowanie sprzedaży, rekomendacje cenowe, wykrywanie anomalii, symulacje 'co-jeśli'." />
     <!--
-          IMPORTANT:
-          • This page is 100% static HTML/CSS/JS. It does NOT use React, JSX, TypeScript or decorators.
-          • If your toolchain tried to compile /index.tsx and failed with:
-              "Support for the experimental syntax 'decorators' isn't currently enabled" or
-              "Unexpected token (1:0)",
-            deploy THIS file as index.html (or ensure your hosting points directly to this file).
-            This removes the need for TS/JSX parsing entirely.
-        -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet" />
+      IMPORTANT:
+      • This page is 100% static HTML/CSS/JS. It does NOT use React, JSX, TypeScript or decorators.
+      • If your toolchain tried to compile /index.tsx and failed with:
+          "Support for the experimental syntax 'decorators' isn't currently enabled" or
+          "Unexpected token (1:0)",
+        deploy THIS file as index.html (or ensure your hosting points directly to this file).
+        This removes the need for TS/JSX parsing entirely.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #f1f5f9; /* slate-100 */
@@ -382,17 +381,18 @@
 <body>
     <!-- background visuals -->
     <svg class="bg-grid" xmlns="http://www.w3.org/2000/svg">
-        <defs><pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#cbd5e1" stroke-width="0.75"></path></pattern></defs>
-        <rect fill="url(#grid)" height="100%" width="100%"></rect>
+        <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#cbd5e1" stroke-width="0.75" /></pattern></defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
     </svg>
     <div class="bg-blob one"></div>
     <div class="bg-blob two"></div>
+
     <!-- header -->
     <header>
         <div class="container">
             <div class="row">
                 <a href="#" style="display:flex;align-items:center;gap:.5rem;font-weight:700;text-decoration:none;color:var(--ink)">
-                    <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M12 3l2.5 5L20 9l-4 4 .9 5L12 15l-4.9 3L8 13 4 9l5.5-1L12 3z"></path></svg>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2.5 5L20 9l-4 4 .9 5L12 15l-4.9 3L8 13 4 9l5.5-1L12 3z" /></svg>
                     eShop Copilot AI
                 </a>
                 <nav>
@@ -406,14 +406,15 @@
             </div>
         </div>
     </header>
+
     <!-- hero -->
     <section class="hero">
         <div class="container">
             <div class="grid grid-2" style="align-items:center;gap:2rem">
                 <div>
                     <div class="mb-4" style="display:flex;gap:.5rem;flex-wrap:wrap">
-                        <span class="badge"><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M12 3l2 6-6-2 2 6-6-2 2 6"></path></svg> Personalizowany doradca Allegro</span>
-                        <span class="badge"><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M13 4h-2v6H5v2h6v6h2v-6h6v-2h-6z"></path></svg> Prognozy • Ceny • Anomalie</span>
+                        <span class="badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l2 6-6-2 2 6-6-2 2 6" /></svg> Personalizowany doradca Allegro</span>
+                        <span class="badge"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 4h-2v6H5v2h6v6h2v-6h6v-2h-6z" /></svg> Prognozy • Ceny • Anomalie</span>
                     </div>
                     <h1>Asystent AI wspomagający zarządzanie Twoim sklepem</h1>
                     <p class="lead mt-3">eShop Copilot AI analizuje sprzedaż, konkurencję i sezonowość, aby prognozować popyt, rekomendować ceny i wykrywać anomalie. Zmieniaj ceny i plany zakupów jednym kliknięciem.</p>
@@ -421,14 +422,14 @@
                         <a class="btn primary" href="#pricing">Zobacz cennik</a>
                         <a class="btn" href="dashboard.html">
                             Zobacz demo
-                            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:.25rem" viewbox="0 0 24 24"><path d="M9 18l6-6-6-6"></path></svg>
+                            <svg class="icon" style="margin-left:.25rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6" /></svg>
                         </a>
                     </div>
                     <p class="note mt-3">Integracja z oficjalnym Allegro REST API. Zgodność z RODO. Dane w UE.</p>
                 </div>
                 <div>
                     <div class="card pad">
-                        <div style="display:flex;align-items:center;gap:.5rem"><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M3 3v18h18"></path></svg><strong>Przykładowa rekomendacja asystenta</strong></div>
+                        <div style="display:flex;align-items:center;gap:.5rem"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18" /></svg><strong>Przykładowa rekomendacja asystenta</strong></div>
                         <div class="mt-3">
                             <div class="card pad" style="background:#f8fafc">
                                 <p class="mb-2"><strong>SKU:</strong> Kurtka Softshell X200</p>
@@ -449,6 +450,7 @@
             </div>
         </div>
     </section>
+
     <!-- features -->
     <section id="features" style="background:rgba(255,255,255,.6);backdrop-filter:blur(6px)">
         <div class="container">
@@ -472,6 +474,7 @@
             </div>
         </div>
     </section>
+
     <!-- how it works -->
     <section id="how">
         <div class="container">
@@ -498,57 +501,81 @@
             </div>
         </div>
     </section>
+
     <!-- pricing -->
     <section id="pricing" style="background:rgba(255,255,255,.6);backdrop-filter:blur(6px)">
         <div class="container">
             <div class="center">
                 <h2>Cennik</h2>
+                <p class="muted">Prosty abonament. Wybierz miesięcznie lub rocznie <span id="saveText">(2 mies. gratis)</span>.</p>
+            </div>
+            <div class="center mt-4" style="display:flex;gap:.65rem;align-items:center;justify-content:center;flex-wrap:wrap">
+                <span class="muted" id="labelMonthly" style="font-weight:400">Miesięcznie</span>
+                <button id="billingToggle" class="toggle" aria-label="Przełącz rozliczenie"><span class="knob"></span></button>
+                <span class="muted" id="labelYearly" style="font-weight:700">Rocznie</span>
+                <span class="badge" id="badgeFree">2 mies. gratis</span>
             </div>
 
-            <div class="grid mt-8 grid-3" style="max-width: 980px; margin: 0 auto;">
+            <div class="grid grid-4 mt-8">
                 <!-- Starter -->
                 <div class="card pad">
                     <div class="feature-title">Starter</div>
-                    <div class="mt-2"><span class="price" data-testid="p-starter" id="p-starter">299 zł</span> <span class="muted" data-testid="s-starter" id="s-starter">/ mies.</span></div>
+                    <div class="mt-2"><span class="price" id="p-starter" data-testid="p-starter">299 zł</span> <span id="s-starter" class="muted" data-testid="s-starter">/ mies.</span></div>
                     <ul class="list mt-2">
-                        <li><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>Do 1 000 SKU / konto Allegro</li>
-                        <li><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>Prognozy sprzedaży (podstawowe)</li>
-                        <li><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>Wykrywanie anomalii cen i popytu</li>
+                        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Do 1 000 SKU / konto Allegro</li>
+                        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Prognozy sprzedaży (podstawowe)</li>
+                        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Wykrywanie anomalii cen i popytu</li>
                         <li class="muted">Raport tygodniowy PDF/Email</li>
                         <li class="muted">Podstawowa integracja Allegro API</li>
                     </ul>
                     <div class="mt-6"><a class="btn" href="#signup">Rozpocznij</a></div>
                 </div>
+
                 <!-- Growth (highlight) -->
                 <div class="card pad" style="border:2px solid var(--accent)">
                     <div class="feature-title">Growth</div>
-                    <div class="mt-2"><span class="price" data-testid="p-growth" id="p-growth">899 zł</span> <span class="muted" data-testid="s-growth" id="s-growth">/ mies.</span></div>
+                    <div class="mt-2"><span class="price" id="p-growth" data-testid="p-growth">899 zł</span> <span id="s-growth" class="muted" data-testid="s-growth">/ mies.</span></div>
                     <ul class="list mt-2">
-                        <li><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>Do 10 000 SKU</li>
-                        <li><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>Prognozy granularne per SKU, sezonowość</li>
-                        <li><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>Rekomendacje cenowe + alerty</li>
+                        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Do 10 000 SKU</li>
+                        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Prognozy granularne per SKU, sezonowość</li>
+                        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Rekomendacje cenowe + alerty</li>
                         <li class="muted">Symulacje 'co-jeśli' i plan zakupów</li>
                         <li class="muted">Integracje ERP/WMS (konektory)</li>
                     </ul>
                     <div class="mt-6"><a class="btn primary" href="#signup">Wypróbuj Growth</a></div>
                 </div>
+
                 <!-- Pro -->
                 <div class="card pad">
                     <div class="feature-title">Pro</div>
-                    <div class="mt-2"><span class="price" data-testid="p-pro" id="p-pro">2 499 zł</span> <span class="muted" data-testid="s-pro" id="s-pro">/ mies.</span></div>
+                    <div class="mt-2"><span class="price" id="p-pro" data-testid="p-pro">2 499 zł</span> <span id="s-pro" class="muted" data-testid="s-pro">/ mies.</span></div>
                     <ul class="list mt-2">
-                        <li><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>Do 100 000 SKU</li>
-                        <li><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>Dynamic pricing (reguły + RL)</li>
-                        <li><svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12l5 5L20 7"></path></svg>Alerty SMS/Push, harmonogram</li>
+                        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Do 100 000 SKU</li>
+                        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Dynamic pricing (reguły + RL)</li>
+                        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Alerty SMS/Push, harmonogram</li>
                         <li class="muted">SLA 99.9% i dedykowany opiekun</li>
                         <li class="muted">API i webhooki, SSO, audyt danych</li>
                     </ul>
                     <div class="mt-6"><a class="btn" href="#signup">Zamów Demo</a></div>
                 </div>
+
                 <!-- Enterprise -->
+                <div class="card pad">
+                    <div class="feature-title">Enterprise</div>
+                    <div class="mt-2"><span class="price">Skrojona oferta</span></div>
+                    <ul class="list mt-2">
+                        <li class="muted">&gt;100 000 SKU i multi-konto</li>
+                        <li class="muted">Procesy szyte na miarę</li>
+                        <li class="muted">Dodatkowe środowiska i VPC</li>
+                        <li class="muted">Zaawansowane polityki bezpieczeństwa</li>
+                    </ul>
+                    <div class="mt-6"><a class="btn primary" href="#contact">Porozmawiajmy</a></div>
+                </div>
             </div>
+            <p class="note center mt-6">Ceny netto. Dostępne zniżki roczne i dla startupów. Możliwy onboarding płatny jednorazowo.</p>
         </div>
     </section>
+
     <!-- demo + contact form -->
     <section id="demo">
         <div class="container">
@@ -561,23 +588,27 @@
                 </div>
                 <div style="margin-top:1.5rem">
                     <div style="width:80%;margin:0 auto">
-                        <form action="https://formspree.io/f/mqadvnng" id="contactForm" method="POST">
-                            <div class="alert err" id="formWarning" style="display:none"></div>
-                            <div class="alert ok" id="formOk" style="display:none"></div>
+                        <form id="contactForm" action="https://formspree.io/f/mqadvnng" method="POST">
+                            <div id="formWarning" class="alert err" style="display:none"></div>
+                            <div id="formOk" class="alert ok" style="display:none"></div>
+
                             <div class="grid" style="grid-template-columns:1fr 1fr;gap:.75rem">
-                                <input class="input" name="name" placeholder="Imię i nazwisko" required="" />
+                                <input class="input" name="name" placeholder="Imię i nazwisko" required />
                                 <input class="input" name="company" placeholder="Firma / konto Allegro" />
                             </div>
-                            <input class="input mt-2" name="email" placeholder="Adres email" required="" type="email" />
-<textarea class="mt-2" name="message" placeholder="Krótko opisz potrzeby (SKU, kategorie, wyzwania)" required=""></textarea>
+                            <input class="input mt-2" name="email" placeholder="Adres email" type="email" required />
+                            <textarea class="mt-2" name="message" placeholder="Krótko opisz potrzeby (SKU, kategorie, wyzwania)" required></textarea>
+
                             <!-- helpers -->
-                            <input name="_subject" type="hidden" value="Nowe zgłoszenie z formularza VendoPilot" />
-                            <input autocomplete="off" name="website" style="display:none" tabindex="-1" type="text" />
+                            <input type="hidden" name="_subject" value="Nowe zgłoszenie z formularza VendoPilot">
+                            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
                             <label class="note mt-2" style="display:flex;gap:.5rem;align-items:flex-start">
-                                <input id="consent" name="consent" required="" type="checkbox" /> Wyrażam zgodę na kontakt w celu przedstawienia oferty oraz przetwarzanie danych zgodnie z Polityką prywatności.
+                                <input type="checkbox" id="consent" name="consent" required> Wyrażam zgodę na kontakt w celu przedstawienia oferty oraz przetwarzanie danych zgodnie z Polityką prywatności.
                             </label>
+
                             <div class="mt-3" style="display:flex;gap:.5rem">
-                                <button class="btn primary" id="sendBtn" type="submit">Wyślij</button>
+                                <button class="btn primary" type="submit" id="sendBtn">Wyślij</button>
                             </div>
                         </form>
                     </div>
@@ -598,15 +629,42 @@
                 </div>
             </div>
         </footer>
-        <script>
-    // === Global config ===
+
+
+        <script>// === Global config ===
             const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqadvnng'; // <- Podmień na swój ID
 
             // === Init year ===
             document.getElementById('year').textContent = new Date().getFullYear();
-        </script>
-        <script id="formspreeHandler">
-    // === Contact form (Formspree) — inline success/error, no redirect ===
+
+            // === Pricing toggle logic (yearly = 10x monthly => 2 months free) ===
+            const toggle = document.getElementById('billingToggle');
+            const labelMonthly = document.getElementById('labelMonthly');
+            const labelYearly = document.getElementById('labelYearly');
+            const badgeFree = document.getElementById('badgeFree');
+            const saveText = document.getElementById('saveText');
+
+            let yearly = true;
+            function price(monthly) { return yearly ? Math.round(monthly * 10) : monthly }
+            function fmt(n) { return n.toLocaleString('pl-PL') + ' zł' }
+
+            function refreshPrices() {
+                document.getElementById('p-starter').textContent = fmt(price(299));
+                document.getElementById('p-growth').textContent = fmt(price(899));
+                document.getElementById('p-pro').textContent = fmt(price(2499));
+                document.getElementById('s-starter').textContent = yearly ? '/ rok' : '/ mies.';
+                document.getElementById('s-growth').textContent = yearly ? '/ rok' : '/ mies.';
+                document.getElementById('s-pro').textContent = yearly ? '/ rok' : '/ mies.';
+                labelMonthly.style.fontWeight = yearly ? '400' : '700';
+                labelYearly.style.fontWeight = yearly ? '700' : '400';
+                toggle.classList.toggle('active', yearly);
+                badgeFree.style.display = yearly ? 'inline-flex' : 'none';
+                saveText.textContent = yearly ? '(2 mies. gratis)' : '';
+            }
+
+            toggle.addEventListener('click', () => { yearly = !yearly; refreshPrices(); });
+            refreshPrices();</script>
+        <script id="formspreeHandler">// === Contact form (Formspree) — inline success/error, no redirect ===
             (function () {
                 const form = document.getElementById('contactForm');
                 if (!form) return;
@@ -679,6 +737,5 @@
                     }
                 });
             })();</script>
-    </section>
 </body>
 </html>
