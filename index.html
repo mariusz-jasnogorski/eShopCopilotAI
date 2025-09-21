@@ -594,170 +594,169 @@
     <!-- demo + contact form -->
     <section id="demo">
         <div class="container">
-            <div class="card pad">
-                <div class="grid grid-2" style="gap:1.25rem">
-                    <div>
-                        <h3 style="margin:0">Zobacz demo</h3>
-                        <p class="muted mt-2">Pokażemy jak asystent AI doradza w realnych scenariuszach Allegro: prognozy, ceny, anomalie i symulacje.</p>
-                        <ul class="list mt-2">
-                            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>15-minutowy przegląd funkcji</li>
-                            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Krótkie podłączenie sandbox/CSV</li>
-                            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5L20 7" /></svg>Dopasowanie planu do potrzeb</li>
-                        </ul>
+            <div class="card pad" style="max-width:800px;margin:0 auto">
+                <div class="center">
+                    <h3 style="margin:0">Formularz kontaktowy</h3>
+                    <p class="muted" style="margin-top:0.5rem">
+                        Masz pytania lub chcesz złożyć zamówienie? Wypełnij poniższy formularz, a skontaktujemy się z Tobą.
+                    </p>
+                </div>
+                <div style="margin-top:1.5rem">
+                    <div style="width:80%;margin:0 auto">
+                        <form id="contactForm" action="https://formspree.io/f/mqadvnng" method="POST">
+                            <div id="formWarning" class="alert err" style="display:none"></div>
+                            <div id="formOk" class="alert ok" style="display:none"></div>
+
+                            <div class="grid" style="grid-template-columns:1fr 1fr;gap:.75rem">
+                                <input class="input" name="name" placeholder="Imię i nazwisko" required />
+                                <input class="input" name="company" placeholder="Firma / konto Allegro" />
+                            </div>
+                            <input class="input mt-2" name="email" placeholder="Adres email" type="email" required />
+                            <textarea class="mt-2" name="message" placeholder="Krótko opisz potrzeby (SKU, kategorie, wyzwania)" required></textarea>
+
+                            <!-- helpers -->
+                            <input type="hidden" name="_subject" value="Nowe zgłoszenie z formularza VendoPilot">
+                            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+                            <label class="note mt-2" style="display:flex;gap:.5rem;align-items:flex-start">
+                                <input type="checkbox" id="consent" name="consent" required> Wyrażam zgodę na kontakt w celu przedstawienia oferty oraz przetwarzanie danych zgodnie z Polityką prywatności.
+                            </label>
+
+                            <div class="mt-3" style="display:flex;gap:.5rem">
+                                <button class="btn primary" type="submit" id="sendBtn">Wyślij</button>
+                            </div>
+                        </form>
                     </div>
-                    <form id="contactForm" action="https://formspree.io/f/mqadvnng" method="POST">
-                        <div id="formWarning" class="alert err" style="display:none"></div>
-                        <div id="formOk" class="alert ok" style="display:none"></div>
-
-                        <div class="grid" style="grid-template-columns:1fr 1fr;gap:.75rem">
-                            <input class="input" name="name" placeholder="Imię i nazwisko" required />
-                            <input class="input" name="company" placeholder="Firma / konto Allegro" />
-                        </div>
-                        <input class="input mt-2" name="email" placeholder="Adres email" type="email" required />
-                        <textarea class="mt-2" name="message" placeholder="Krótko opisz potrzeby (SKU, kategorie, wyzwania)" required></textarea>
-
-                        <!-- helpers -->
-                        <input type="hidden" name="_subject" value="Nowe zgłoszenie z formularza VendoPilot">
-                        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-
-                        <label class="note mt-2" style="display:flex;gap:.5rem;align-items:flex-start">
-                            <input type="checkbox" id="consent" name="consent" required> Wyrażam zgodę na kontakt w celu przedstawienia oferty oraz przetwarzanie danych zgodnie z Polityką prywatności.
-                        </label>
-
-                        <div class="mt-3" style="display:flex;gap:.5rem">
-                            <button class="btn primary" type="submit" id="sendBtn">Wyślij</button>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-row">
-                <p class="muted">© <span id="year"></span> Simmsoft. Wszelkie prawa zastrzeżone.</p>
-                <div style="display:flex;gap:1rem">
-                    <a class="muted" href="#">Regulamin</a>
-                    <a class="muted" href="#">Polityka prywatności</a>
-                    <a class="muted" href="#">Bezpieczeństwo</a>
+        
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-row">
+                    <p class="muted">© <span id="year"></span> Simmsoft. Wszelkie prawa zastrzeżone.</p>
+                    <div style="display:flex;gap:1rem">
+                        <a class="muted" href="#">Regulamin</a>
+                        <a class="muted" href="#">Polityka prywatności</a>
+                        <a class="muted" href="#">Bezpieczeństwo</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
 
-    <script>
-        // === Global config ===
-        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqadvnng'; // <- Podmień na swój ID
+        <script>
+            // === Global config ===
+            const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqadvnng'; // <- Podmień na swój ID
 
-        // === Init year ===
-        document.getElementById('year').textContent = new Date().getFullYear();
+            // === Init year ===
+            document.getElementById('year').textContent = new Date().getFullYear();
 
-        // === Pricing toggle logic (yearly = 10x monthly => 2 months free) ===
-        const toggle = document.getElementById('billingToggle');
-        const labelMonthly = document.getElementById('labelMonthly');
-        const labelYearly = document.getElementById('labelYearly');
-        const badgeFree = document.getElementById('badgeFree');
-        const saveText = document.getElementById('saveText');
+            // === Pricing toggle logic (yearly = 10x monthly => 2 months free) ===
+            const toggle = document.getElementById('billingToggle');
+            const labelMonthly = document.getElementById('labelMonthly');
+            const labelYearly = document.getElementById('labelYearly');
+            const badgeFree = document.getElementById('badgeFree');
+            const saveText = document.getElementById('saveText');
 
-        let yearly = true;
-        function price(monthly) { return yearly ? Math.round(monthly * 10) : monthly }
-        function fmt(n) { return n.toLocaleString('pl-PL') + ' zł' }
+            let yearly = true;
+            function price(monthly) { return yearly ? Math.round(monthly * 10) : monthly }
+            function fmt(n) { return n.toLocaleString('pl-PL') + ' zł' }
 
-        function refreshPrices() {
-            document.getElementById('p-starter').textContent = fmt(price(299));
-            document.getElementById('p-growth').textContent = fmt(price(899));
-            document.getElementById('p-pro').textContent = fmt(price(2499));
-            document.getElementById('s-starter').textContent = yearly ? '/ rok' : '/ mies.';
-            document.getElementById('s-growth').textContent = yearly ? '/ rok' : '/ mies.';
-            document.getElementById('s-pro').textContent = yearly ? '/ rok' : '/ mies.';
-            labelMonthly.style.fontWeight = yearly ? '400' : '700';
-            labelYearly.style.fontWeight = yearly ? '700' : '400';
-            toggle.classList.toggle('active', yearly);
-            badgeFree.style.display = yearly ? 'inline-flex' : 'none';
-            saveText.textContent = yearly ? '(2 mies. gratis)' : '';
-        }
-
-        toggle.addEventListener('click', () => { yearly = !yearly; refreshPrices(); });
-        refreshPrices();
-
-    </script>
-    <script id="formspreeHandler">
-        // === Contact form (Formspree) — inline success/error, no redirect ===
-        (function () {
-            const form = document.getElementById('contactForm');
-            if (!form) return;
-            const warn = document.getElementById('formWarning');
-            const ok = document.getElementById('formOk');
-            const consent = document.getElementById('consent');
-            const sendBtn = document.getElementById('sendBtn');
-            const ENDPOINT = 'https://formspree.io/f/mqadvnng';
-
-            function show(el, msg) {
-                if (!el) return;
-                el.textContent = msg;
-                el.style.display = 'block';
+            function refreshPrices() {
+                document.getElementById('p-starter').textContent = fmt(price(299));
+                document.getElementById('p-growth').textContent = fmt(price(899));
+                document.getElementById('p-pro').textContent = fmt(price(2499));
+                document.getElementById('s-starter').textContent = yearly ? '/ rok' : '/ mies.';
+                document.getElementById('s-growth').textContent = yearly ? '/ rok' : '/ mies.';
+                document.getElementById('s-pro').textContent = yearly ? '/ rok' : '/ mies.';
+                labelMonthly.style.fontWeight = yearly ? '400' : '700';
+                labelYearly.style.fontWeight = yearly ? '700' : '400';
+                toggle.classList.toggle('active', yearly);
+                badgeFree.style.display = yearly ? 'inline-flex' : 'none';
+                saveText.textContent = yearly ? '(2 mies. gratis)' : '';
             }
-            function hide(el) { if (el) el.style.display = 'none'; }
 
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault(); // prevent navigation
-                hide(warn); hide(ok);
+            toggle.addEventListener('click', () => { yearly = !yearly; refreshPrices(); });
+            refreshPrices();
 
-                if (!consent || !consent.checked) {
-                    show(warn, 'Zaznacz zgodę RODO.');
-                    return;
+        </script>
+        <script id="formspreeHandler">
+            // === Contact form (Formspree) — inline success/error, no redirect ===
+            (function () {
+                const form = document.getElementById('contactForm');
+                if (!form) return;
+                const warn = document.getElementById('formWarning');
+                const ok = document.getElementById('formOk');
+                const consent = document.getElementById('consent');
+                const sendBtn = document.getElementById('sendBtn');
+                const ENDPOINT = 'https://formspree.io/f/mqadvnng';
+
+                function show(el, msg) {
+                    if (!el) return;
+                    el.textContent = msg;
+                    el.style.display = 'block';
                 }
+                function hide(el) { if (el) el.style.display = 'none'; }
 
-                const data = new FormData(form);
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault(); // prevent navigation
+                    hide(warn); hide(ok);
 
-                // honeypot: if website field has any value, treat as success but do nothing
-                const honey = (data.get('website') || '').trim();
-                if (honey.length) {
-                    show(ok, 'Dziękujemy! Formularz został wysłany.');
-                    form.reset();
-                    if (consent) consent.checked = false;
-                    return;
-                }
+                    if (!consent || !consent.checked) {
+                        show(warn, 'Zaznacz zgodę RODO.');
+                        return;
+                    }
 
-                try {
-                    if (sendBtn) { sendBtn.disabled = true; sendBtn.textContent = 'Wysyłanie…'; }
-                    const res = await fetch(ENDPOINT, {
-                        method: 'POST',
-                        body: data,
-                        headers: { 'Accept': 'application/json' }
-                    });
+                    const data = new FormData(form);
 
-                    if (res.ok) {
+                    // honeypot: if website field has any value, treat as success but do nothing
+                    const honey = (data.get('website') || '').trim();
+                    if (honey.length) {
                         show(ok, 'Dziękujemy! Formularz został wysłany.');
                         form.reset();
                         if (consent) consent.checked = false;
                         return;
                     }
 
-                    // Try to parse Formspree error details for 422 etc.
-                    let msg = 'Błąd wysyłki.';
                     try {
-                        const j = await res.json();
-                        if (j && j.errors && j.errors.length) {
-                            msg = j.errors.map(e => e.message).join(' • ');
-                        } else {
-                            msg = (j && (j.error || j.message)) || msg;
-                        }
-                    } catch (_) {
-                        const txt = await res.text();
-                        if (txt && txt.trim().length) msg = txt.trim();
-                    }
-                    show(warn, msg);
-                } catch (err) {
-                    show(warn, (err && err.message) ? err.message : 'Błąd sieci.');
-                } finally {
-                    if (sendBtn) { sendBtn.disabled = false; sendBtn.textContent = 'Wyślij'; }
-                }
-            });
-        })();
+                        if (sendBtn) { sendBtn.disabled = true; sendBtn.textContent = 'Wysyłanie…'; }
+                        const res = await fetch(ENDPOINT, {
+                            method: 'POST',
+                            body: data,
+                            headers: { 'Accept': 'application/json' }
+                        });
 
-    </script>
+                        if (res.ok) {
+                            show(ok, 'Dziękujemy! Formularz został wysłany.');
+                            form.reset();
+                            if (consent) consent.checked = false;
+                            return;
+                        }
+
+                        // Try to parse Formspree error details for 422 etc.
+                        let msg = 'Błąd wysyłki.';
+                        try {
+                            const j = await res.json();
+                            if (j && j.errors && j.errors.length) {
+                                msg = j.errors.map(e => e.message).join(' • ');
+                            } else {
+                                msg = (j && (j.error || j.message)) || msg;
+                            }
+                        } catch (_) {
+                            const txt = await res.text();
+                            if (txt && txt.trim().length) msg = txt.trim();
+                        }
+                        show(warn, msg);
+                    } catch (err) {
+                        show(warn, (err && err.message) ? err.message : 'Błąd sieci.');
+                    } finally {
+                        if (sendBtn) { sendBtn.disabled = false; sendBtn.textContent = 'Wyślij'; }
+                    }
+                });
+            })();
+
+        </script>
 </body>
 </html>
