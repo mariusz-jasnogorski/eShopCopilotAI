@@ -463,7 +463,7 @@
                 </div>
                 <div class="card pad">
                     <div style="display:flex;gap:.5rem;align-items:center"><div class="pill">2</div><span class="feature-title">Rekomendacje cenowe</span></div>
-                    <p class="muted mt-2">Reguły, progi marżowe, a w Pro także pricing sterowany politykami.</p>
+                    <p class="muted mt-2">Reguły, progi marżowe, a w planie L także pricing sterowany politykami.</p>
                 </div>
                 <div class="card pad">
                     <div style="display:flex;gap:.5rem;align-items:center"><div class="pill">3</div><span class="feature-title">Alerty i anomalie</span></div>
@@ -574,11 +574,12 @@
                 </div>
             </div>
         </div>
-        
+        <br />
         <!-- footer -->
         <footer>
             <div class="container">
                 <div class="footer-row">
+                    <p class="muted" style="font-size:0.85rem;margin-bottom:0.5rem;">* Przedstawione informacje mają charakter wyłącznie informacyjny i nie stanowią oferty w rozumieniu Kodeksu cywilnego.</p>
                     <p class="muted">© <span id="year"></span> Simmsoft. Wszelkie prawa zastrzeżone.</p>
                     <div style="display:flex;gap:1rem">
                         <a class="muted" href="#">Regulamin</a>
@@ -589,14 +590,14 @@
             </div>
         </footer>
         <script>
-    // === Global config ===
+            // === Global config ===
             const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqadvnng'; // <- Podmień na swój ID
 
             // === Init year ===
             document.getElementById('year').textContent = new Date().getFullYear();
         </script>
         <script id="formspreeHandler">
-    // === Contact form (Formspree) — inline success/error, no redirect ===
+            // === Contact form (Formspree) — inline success/error, no redirect ===
             (function () {
                 const form = document.getElementById('contactForm');
                 if (!form) return;
